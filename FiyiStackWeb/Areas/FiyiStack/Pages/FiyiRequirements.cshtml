@@ -1,0 +1,221 @@
+﻿@page "/FiyiRequirements"
+@model FiyiStackWeb.Areas.FiyiStack.Products.Pages.FiyiRequirementsModel
+@{
+    Layout = "_Layout";
+}
+<div class="container">
+    <div class="row mt-5 pt-5">
+        <!-- Title -->
+        <div class="col-lg-8 mx-auto text-center my-5">
+            <h3 class="display-4">FiyiRequirements</h3>
+            <h5><span class="badge badge-lg badge-success">El código de ejemplo</span></h5>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col mr-auto text-left mt-4">
+            <div class="card bg-default">
+                <div class="card-body">
+                    <h5 class="card-title text-white">Tabla de contenido</h5>
+                    <div class="row">
+                        <div class="col-8">
+                            <ol class="text-white">
+                                <li class="mt-2"><a class="text-white" href="#1">¿Qué es FiyiRequirements?</a></li>
+                                <li class="mt-2"><a class="text-white" href="#2">¿Qué contiene FiyiRequirements adentro?</a></li>
+                                <li class="mt-2"><a class="text-white" href="#3">Diagrama de base de datos</a></li>
+                                <li class="mt-2"><a class="text-white" href="#4">Un CMS dentro de FiyiRequirements</a></li>
+                            </ol>
+                        </div>
+                        <div class="col-4 d-none d-lg-inline d-xl-inline">
+                            <img src="/img/FiyiStack/Requirements.png" width="130" alt="Logo" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- What is FiyiRequirements? -->
+            <div id="1" class="card bg-default shadow border-0">
+                <img src="/img/FiyiStack/IndexFiyiRequirements.png" class="card-img-top">
+                <blockquote class="card-blockquote">
+                    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                        <polygon points="0,52 583,95 0,95" class="fill-default"></polygon>
+                        <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default"></polygon>
+                    </svg>
+                    <h4 class="display-4 text-white">¿Qué es FiyiRequirements?</h4>
+                    <p class="text-italic text-white">
+                        FiyiRequirements es una aplicación web hecha con FiyiStack.
+                        FiyiRequirements trabaja con las siguientes tecnologías:
+                        <span class="badge badge-success">C# .NET Core 3.1</span>, 
+                        <span class="badge badge-success">MS SQL Server</span>, 
+                        <span class="badge badge-success">JavaScript</span> y
+                        <span class="badge badge-success">TypeScript.</span>.
+                    </p>
+                    <p class="text-italic text-white">
+                        La aplicación sirve de ejemplo de lo que es capaz de generar FiyiStack,
+                        aquí tus clientes pueden subir sus requerimientos, dudas, quejas y más.
+                        También esta compuesto de un <span class="badge badge-success">CMS</span>
+                        (Control Management System) para que puedas visualizar fallas, 
+                        parametros del servidor, usuarios, roles, permisos, requerimientos, estados, 
+                        prioridades y asignar requerimientos a tus clientes, si tienes.
+                    </p>
+                    <p class="text-italic text-white">
+                        También contiene las páginas necesarias de cualquier aplicación web:
+                    </p>
+                    <ul class="text-white">
+                        <li class="mt-2">Página de login</li>
+                        <li class="mt-2">Página para crear una cuenta</li>
+                        <li class="mt-2">Página para recuperar la contraseña</li>
+                        <li class="mt-2">Página para cambiar la contraseña</li>
+                    </ul>
+                    <p class="text-italic text-white">
+                        Para más detalles puedes ver un video en 
+                        <span class="badge badge-warning">YouTube</span>: 
+                        <a class="text-white" target="_blank" href="https://youtu.be/cGk3WHA2HCc">https://youtu.be/cGk3WHA2HCc</a>
+                    </p>
+                </blockquote>
+            </div>
+            <!-- What does FiyiRequirements contain inside? -->
+            <div id="2" class="card bg-default shadow border-0">
+                <img src="/img/FiyiStack/VSFiyiRequirements.png" class="card-img-top">
+                <blockquote class="card-blockquote">
+                    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                        <polygon points="0,52 583,95 0,95" class="fill-default"></polygon>
+                        <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default"></polygon>
+                    </svg>
+                    <h4 class="display-4 text-white">¿Qué contiene FiyiRequirements adentro?</h4>
+                    <p class="text-italic text-white">
+                        FiyiRequirements fue hecho con Visual Studio. 
+                        Si abres la solución
+                        <span class="badge badge-success">FiyiRequirements.sln</span> 
+                        vas a ver la imagen de arriba. Como puedes ver, las siguientes carpetas y
+                        archivos se mostraran:
+                    </p>
+                    <ul class="text-white">
+                        <li class="mt-2"><span class="badge badge-success">Dependencias</span> 
+                            como paquetes Nuget o NPM. 
+                        </li>
+                        <li class="mt-2">Carpeta: <span class="badge badge-success">wwwroot</span>. 
+                            Aquí se guardan los archivos JavaScript, TypeScript, imagenes,
+                            archivos CSS, archivos PDF, Excel y CSV. 
+                            Los archivos subidos por tus usuarios también son guardados aquí.
+                        </li>
+                        <li class="mt-2">Carpeta: <span class="badge badge-success">Areas</span>. 
+                            En .NET Core 3.1 puedes definir áreas de tu aplicación. 
+                            Por ejemplo, FiyiRequirements tiene las áreas BasicCore, BasicCulture,
+                            CMSCore y FiyiRequirements.
+                            En estas áreas, los archivos C# como Web APIs, servicios, filtros, modelos, e 
+                            interfaces son definidas.
+                        </li>
+                        <li class="mt-2">Carpeta: <span class="badge badge-success">BDBackups</span>.
+                            Esta carpeta contiene un backup de la base de datos de FiyiRequirements con 
+                            todas las tablas y procedimientos almacenados listos.
+                        </li>
+                        <li class="mt-2">Folder: <span class="badge badge-success">BDScheme</span>. 
+                            Esta carpeta contiene un esquema de la base de datos para que te sirva
+                            como guia.
+                        </li>
+                        <li class="mt-2">Folder: <span class="badge badge-success">JSONScripts</span>. 
+                            Esta carpeta contiene archivos .json para que puedas testear la aplicación
+                            usando Postman.
+                        </li>
+                        <li class="mt-2">Folder: <span class="badge badge-success">Library</span>. 
+                            Esta carpeta contiene librerias C# para reusar en tus aplicaciones.
+                            Las librerias contienen validadores de atributos para los modelos C#, 
+                            estructuras como arboles y grafos.
+                            También contiene conversores, clases de seguridad y validadores.
+                        </li>
+                        <li class="mt-2">Carpeta: <span class="badge badge-success">node_modules</span>.
+                            Esta carpeta contiene todas las librerias creadas por npm.
+                        </li>
+                        <li class="mt-2">Carpeta: <span class="badge badge-success">Pages</span>. 
+                            Esta carpeta contiene las páginas básicas como Index o Error. También contiene
+                            las plantillas usadas por las páginas Razor.
+                        </li>
+                        <li class="mt-2">Carpeta: <span class="badge badge-success">SQLScripts</span>. 
+                            Esta carpeta contiene los scripts SQL creados por FiyiStack.
+                        </li>
+                        <li class="mt-2">Archivo: <span class="badge badge-success">package.json</span>. 
+                            Este archivo contiene la configuración necesaria para usar
+                            NPM en el proyecto. Las librerias que se definan aquí seran guardadas 
+                            en la carpeta node_modules.
+                        </li>
+                        <li class="mt-2">Archivo: <span class="badge badge-success">Startup.cs</span>.
+                            Este archivo es el encargado de ejecutar la aplicación cuando un usuario inicia
+                            sesión. Aquí se definen configuraciones básicas como el uso de sesión,
+                            controladores, vistas y servicios con sus respectivas interfaces.
+                        </li>
+                        <li class="mt-2">Archivo: <span class="badge badge-success">tsconfig.json</span>. 
+                            Este archivo contiene la información necesaria para que funcione el 
+                            compilador de TypeScript.
+                        </li>
+                        <li class="mt-2">Archivo: <span class="badge badge-success">webpack.config.js</span>. 
+                            Este archivo contiene la información necesaria para que funcione el empaquetador
+                            Webpack. Por ejemplo, los archivos TypeScript se definen con sus respectivas
+                            rutas para que el contenedor los convierta en JavaScript.
+                        </li>
+                    </ul>
+                </blockquote>
+            </div>
+            <!-- Database schema -->
+            <div id="3" class="card bg-default shadow border-0">
+                <img src="/img/FiyiStack/Scheme.png" class="card-img-top">
+                <blockquote class="card-blockquote">
+                    <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                        <polygon points="0,52 583,95 0,95" class="fill-default"></polygon>
+                        <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default"></polygon>
+                    </svg>
+                    <h4 class="display-4 text-white">Diagrama de base de datos</h4>
+                    <p class="text-italic text-white">
+                        These are the areas of the application, there are 4 in total
+                    </p>
+                    <ul class="text-white">
+                        <li class="mt-2"><span class="badge badge-warning">Basic.Core</span>.
+                            Esta área es la más importante, aquí se definen las tablas de Fallas y 
+                            Parámetros. Estas tablas almacenan los bloqueos generados por la aplicación
+                            para que puedas revisarlos y los parámetros privados de la aplicación, 
+                            como el correo del sitio, las contraseñas, etc.
+                        </li>
+                        <li class="mt-2"><span class="badge badge-success">Basic.Culture</span>.
+                            Esta área también es importante, aunque no imprescindible. Aquí se definen
+                            las tablas Ciudad, Provincia, País, Planeta (broma) y Sexo.
+                        </li>
+                        <li class="mt-2"><span class="badge badge-primary">CMS.Core</span>.
+                            Esta área es también importante. Aquí se definen las tablas necesarias para
+                            que el CMS cobre vida. En estas tablas se definen los usuarios, roles, 
+                            permisos y menús.
+                        </li>
+                        <li class="mt-2"><span class="badge badge-danger">Requirement</span>.
+                            Esta área pertenece a la aplicación FiyiRequirements. Con estas tablas puedes
+                            crear requisitos, añadir archivos y notas a los requisitos y tener un historial
+                            de cambios.
+                        </li>
+                    </ul>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+                        <span class="alert-inner--text">La ventaja de definir áreas en la aplicación
+                            es que puedes reutilizar áreas que son comunes en todas las aplicaciones
+                            como Basic.Core, Basic.Culture y CMS.Core.</span>
+                    </div>
+                </blockquote>
+            </div>
+            <!-- A CMS inside FiyiRequirements -->
+            <div id="3" class="card bg-default shadow border-0">
+                <blockquote class="card-blockquote">
+                    <h4 class="display-4 text-white">Un CMS dentro de FiyiRequirements</h4>
+                    <p class="text-italic text-white">
+                        Debido al área CMSCore, <span class="badge badge-success">FiyiRequirements</span> 
+                        <u>contiene un CMS dentro</u>, ¿pero qué es un CMS? 
+                        Un CMS (Content Management System) es un <u>sistema capaz de manipular el contenido
+                        de una aplicación web</u>. Por ejemplo un <span class="badge badge-info">blog</span> o 
+                        un <span class="badge badge-info">e-commerce</span> contienen un CMS dentro. 
+                        <u>La edición es hecha por administradores de aplicaciones, editores y participantes.</u>.
+                        El sistema permite <u>gestión independiente de contenidos y diseño</u>. Así, 
+                        es posible administrar el contenido y darle un diseño diferente al sitio web
+                        en cualquier momento sin tener que volver a formatear el contenido, además de
+                        permitir una <u>publicación fácil y controlada</u> en el sitio a varios editores.
+                    </p>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</div>

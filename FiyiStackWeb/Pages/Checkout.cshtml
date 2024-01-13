@@ -1,0 +1,118 @@
+﻿@page "/Checkout/{AccountType}/{SubPlanId}"
+@model FiyiStackWeb.Pages.CheckoutModel
+@{
+    Layout = "_Layout";
+}
+
+<div class="wrapper">
+    <div class="section-shaped mt--6 skew-separator skew-mini">
+      <div class="page-header page-header-small header-filter">
+        <div class="page-header-image" style="background-image: url('/img/FiyiStack/Checkout.jpg');">
+        </div>
+            <script src="https://www.paypal.com/sdk/js?client-id=@ViewData["ClientId"]&currency=USD&vault=true"></script>
+        <div class="container">
+          <div class="header-body text-center mb-7">
+            <div class="row justify-content-center">
+              <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+                <h1 class="text-white">Checkout</h1>
+                <h3 class="text-lead text-white">@ViewData["AccountType"]</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="upper">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="container">
+              <h3 class="title text-white mt-3">Order summary</h3>
+              <div class="row">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="media align-items-center mb-3">
+                      <div class="col-md-5 col-6">
+                        <img src="/img/FiyiStack/FiyiStackImageTransparent.png" alt="Rounded image" class="img-fluid">
+                      </div>
+                      <div class="media-body">
+                        <h2 class="h6">@ViewData["AccountType"]</h2>
+                      </div>
+                      <div class="media-body text-right">
+                        <span>$@ViewData["Price"]</span>
+                      </div>
+                    </div>
+                    <hr class="line-info mb-3">
+                    <div class="media align-items-center">
+                      <h3 class="h6">Total</h3>
+                      <div class="media-body text-right">
+                        <span class="font-weight-semi-bold">$@ViewData["Price"]</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="card">
+              <form class="js-validate">
+                <div class="container">
+                  
+                 
+                 
+                  <div class="tab-content tab-space">
+                   <div id="link2" class="tab-pane active">
+                       <div id="payment-methods">
+                                        <!-- Set up a container element for the button -->
+                                        <div id="paypal-button-container"></div>
+
+                                        <!-- Include the PayPal JavaScript SDK -->
+
+                                         <script>
+                                            // Render the PayPal button into #paypal-button-container
+                                            paypal.Buttons({
+
+                                                style: {
+                                                    color: 'blue',
+                                                    label: 'pay',
+                                                    height: 40
+                                                },
+
+                                               createSubscription:function(data,actions){
+                                                   return actions.subscription.create({
+                                                   'plan_id':'@ViewData["SubPlanId"]',
+                                                   'custom_id': '@ViewData["UserId"]'
+                                                   });
+                                               },
+
+                                                // Call your server to finalize the transaction
+                                                onApprove: function (data, actions) {
+                                                        showThankYou();
+                                                }
+
+                                            }).render('#paypal-button-container');
+                                                function showThankYou() {
+                                                    document.getElementById('thank-you').style.display = 'block';
+                                                    document.getElementById('payment-methods').style.display = 'none';
+                                                }
+                                               </script>
+                       </div>
+                       <div id="thank-you" style="display:none">
+                                            <h4>
+                                                Thank you for subscribing!
+                                            </h4>
+                                            <p>
+                                                We are excited to welcome you as a subscriber to our service, <strong>FiyiStack</strong>. Your subscription is now active, and you're all set to enjoy the benefits of our premium offerings. Check out the blog to be updated from what is developing FiyiStack and stay connected, one of us are going to contact you by email. Thanks, and you are welcome!
+                                            </p>
+                           </div>
+                   </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>

@@ -1,0 +1,14 @@
+{
+    "FailureId" : 1,
+    "HTTPCode" : 1,
+    "EmergencyLevel" : 1,
+    "Message" : "PutMessage",
+    "StackTrace" : "PutStackTrace",
+    "Source" : "PutSource",
+    "Comment" : "PutComment",
+    "Active" : true,
+    "UserCreationId" : 1,
+    "UserLastModificationId" : 1,
+    "DateTimeCreation" : "1753-01-01T00:00:00.001Z",
+    "DateTimeLastModification" : "1753-01-01T00:00:00.001Z"
+}

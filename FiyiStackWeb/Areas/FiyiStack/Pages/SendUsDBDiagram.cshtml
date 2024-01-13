@@ -1,0 +1,122 @@
+@page "/SendUsDBDiagram"
+@using FiyiStackWeb.Areas.FiyiStack.Models
+@model FiyiStackWeb.Areas.FiyiStack.Pages.SendUsDBDiagramPageModel
+@{
+    Layout = "_Layout";
+
+    string NonQueryText = "";
+    string NonQueryIcon = "";
+
+/*
+ * GUID:e6c09dfe-3a3e-461b-b3f9-734aee05fc7b
+ * 
+ * Coded by fiyistack.com
+ * Copyright © 2023
+ * 
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ * 
+ */
+    
+//Stack: 11
+//Last modification on: 23/07/2023 22:31:08
+
+}
+<!-- Page content -->
+<div class="container">
+    <div class="row mt-5 pt-5">
+        <!-- Title -->
+        <div class="col-lg-8 mx-auto text-center my-5">
+            <h3 class="display-4">Envíanos tu diagrama de BD</h3>
+            <h5>y la convertiremos en un proyecto FiyiStack</h5>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+<div class="row">
+    <div class="col-lg-2">&nbsp;</div>
+    <div class="col-lg-8">
+            <!-- Card -->
+            <div class="card">
+                <!-- Card body -->
+                <div class="card-body">
+                    <form class="needs-validation" novalidate>
+                        <!-- Title -->
+                        <div class="form-group mb-3">
+                            <label for="fiyistack-sendusdbdiagram-title-input" class="form-control-label">
+                                <i class="fas fa-font"></i> Título
+                            </label>
+                            <input class="form-control" 
+                                min="1" 
+                                max="300" 
+                                type="text" 
+                                id="fiyistack-sendusdbdiagram-title-input" 
+                                required
+                                />
+                            
+                        </div>
+                        <!-- Description -->
+                        <label for="fiyistack-sendusdbdiagram-description-input" class="form-control-label">
+                            <i class="fas fa-font"></i> 
+                            Descripción
+                        </label>
+                        <div id="fiyistack-sendusdbdiagram-description-input">
+                        </div>
+                        <input type="hidden"  
+                            id="fiyistack-sendusdbdiagram-description-hidden-value">
+                        <div class="mb-3"></div>
+                        <!-- FileUploaded -->
+                        <div class="form-group">
+                            <label class="form-control-label">
+                                <i class="fas fa-file"></i> File
+                            </label>
+                            <br/>
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-preview img-thumbnail" 
+                                    data-trigger="fileinput" 
+                                    style="width: 200px; height: 150px;">
+                                </div>
+                                <div>
+                                    <span class="btn btn-primary btn-file">
+                                        <span class="fileinput-new">Select file</span>
+                                        <span class="fileinput-exists">Change</span>
+                                        <input type="file" 
+                                            min="1" 
+                                            max="8000" 
+                                            id="fiyistack-sendusdbdiagram-fileuploaded-input" 
+                                            value=""/>
+                                    </span>
+                                    <a href="#" class="btn btn-outline-danger fileinput-exists" data-dismiss="fileinput">
+                                        Remover
+                                    </a>
+                                </div>
+                            </div>
+                            <input type="hidden" 
+                                min="1" 
+                                max="8000" 
+                                id="fiyistack-sendusdbdiagram-fileuploaded-readonly"/>
+                            <br />
+                        </div>
+                        
+                        <!-- Buttons -->
+                        <div class="row justify-content-center">
+                            <button class="btn btn-primary btn-block text-nowrap ml-3 mt-4" 
+                                type="submit">
+                                    <i class="fas fa-upload"></i>
+                                    SUBIR
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Card footer -->
+            <div class="card-footer py-2">
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-2">&nbsp;</div>
+</div>
+
+<script src="/js/BasicCore/jquery-3.6.1.min.js"></script>
+<script src="/assets/vendor/quill/dist/quill.min.js"></script>
+<script src="/js/FiyiStack/SendUsDBDiagram/jQuery/SendUsDBDiagramNonQuery_jQuery.js"></script>

@@ -1,0 +1,98 @@
+﻿@page "/ContactUs"
+@model FiyiStackWeb.Areas.FiyiStack.Pages.ContactMeModel
+@{
+    Layout = "_Layout";
+}
+<div class="wrapper">
+    <div class="main">
+        <div class="container-fluid">
+            <div class="row mt-5 mb-4 pt-5">
+                <div class="col-md-8 ml-auto mr-auto text-center mt-5">
+                    <!-- Title -->
+                    <h1 class="display-3">Déjame un mensaje</h1>
+                    <h3 class="lead">Te respondere lo antes posible</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mx-auto ">
+                    <form novalidate class="needs-validation card bg-secondary p-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- Name -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name" class="form-control-label">
+                                            <i class="fas fa-signature"></i> Nombre
+                                        </label>
+                                        <input id="name" 
+                                        type="text" 
+                                        class="form-control" 
+                                        aria-label="Name"
+                                        required>
+                                        <div class="invalid-feedback">
+                                            Este valor es requerido.
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Surname -->
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="surname" class="form-control-label">
+                                            <i class="fas fa-signature"></i> Apellido
+                                        </label>
+                                        <input id="surname" 
+                                        type="text" 
+                                        class="form-control" 
+                                        aria-label="Surname"
+                                        required>
+                                        <div class="invalid-feedback">
+                                            Este valor es requerido.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email" class="form-control-label">
+                                    <i class="ni ni-email-83"></i> E-mail
+                                </label>
+                                <input id="email" 
+                                    type="email" 
+                                    class="form-control"
+                                    required>
+                                <div class="invalid-feedback">
+                                    Este valor es requerido.
+                                </div>
+                            </div>
+                            <!-- TextArea -->
+                            <div class="form-group">
+                                <textarea id="textarea-message" 
+                                class="form-control form-control-alternative" 
+                                rows="6"
+                                required>
+                                </textarea>
+                                <div class="invalid-feedback">
+                                    Este valor es requerido.
+                                </div>
+                            </div>
+                            <!-- Button -->
+                            <div class="row">
+                                <div class="col-md-6 ml-auto">
+                                    <button id="send-message" 
+                                    type="submit" 
+                                    class="btn btn-primary pull-right">
+                                        <i class="ni ni-email-83"></i> 
+                                        Enviar mensaje
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/BasicCore/jquery-3.6.1.min.js"></script>
+<script src="/js/FiyiStack/ContactMe.js"></script>

@@ -1,0 +1,323 @@
+@page
+@using FiyiStackWeb.Areas.CMSCore.Models
+@model FiyiStackWeb.Areas.CMSCore.Pages.UserNonQueryPageModel
+@{
+    Layout = "_LayoutDashboard";
+
+    string NonQueryText = "";
+    string NonQueryIcon = "";
+
+    int UserId;
+    string FantasyName;
+    string Email;
+    string Password;
+    int RoleId;
+    string RoleName;
+    string RegistrationToken;
+    
+
+    if(HttpContext.Request.QueryString.Value.Contains("?UserId=0"))
+    {
+        NonQueryText = "Add";
+        NonQueryIcon = "fas fa-plus";
+
+        UserId = 0;
+        FantasyName = "";
+        Email = "";
+        Password = "";
+        RoleId = 0;
+        RoleName = "Choose a value";
+        RegistrationToken = "";
+        
+    }
+    else
+    {
+        NonQueryText = "Edit";
+        NonQueryIcon = "fas fa-pen";
+
+        UserModel UserModel = new UserModel().Select1ByUserIdToModel
+        (Convert.ToInt32(HttpContext.Request.QueryString.Value.Replace("?UserId=","")));
+
+        UserId = UserModel.UserId;
+        FantasyName = UserModel.FantasyName;
+        Email = UserModel.Email;
+        Password = UserModel.Password;
+        RoleId = UserModel.RoleId;
+        RegistrationToken = UserModel.RegistrationToken;
+        
+        RoleModel RoleModel = new RoleModel(UserModel.RoleId);
+        RoleName = RoleModel.Name;
+    }
+
+    List<RoleModel> lstRoleModel = new RoleModel().SelectAllToList();
+
+/*
+ * GUID:e6c09dfe-3a3e-461b-b3f9-734aee05fc7b
+ * 
+ * Coded by fiyistack.com
+ * Copyright © 2023
+ * 
+ * The above copyright notice and this permission notice shall be included
+ * in all copies or substantial portions of the Software.
+ * 
+ */
+    
+//Stack: 11
+//Last modification on: 15/02/2023 18:50:53
+
+}
+<!-- Header -->
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        <!-- Header body -->
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+                <div class="col-lg-6 col-7">
+                    <!-- Title -->
+                    <h2 class="h2 text-white d-inline-block mb-0">
+                        @NonQueryText 
+                        user
+                    </h2>
+                    <input type="hidden" 
+                        id="cmscore-user-userid-input" 
+                        value="@UserId"/>
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                        <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                            <li class="breadcrumb-item">
+                                <a href="/CMSCore/DashboardIndex">
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="javascript:void(0)">
+                                    CMS (Core)
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="javascript:void(0)">
+                                    User
+                                 </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">
+                                <i class="@NonQueryIcon"></i>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 col-5 text-right">
+                    <!-- XL Screens -->
+                    <div class="d-none d-xl-inline">
+                        <a href="/CMSCore/UserQueryPage" class="btn btn-secondary">
+                            <i class="fas fa-angle-left"></i> Go back
+                        </a>
+                    </div>
+                    <!-- Other Screens -->
+                    <div class="d-inline d-sm-inline d-md-inline d-lg-inline d-xl-none">
+                        <a href="/CMSCore/UserQueryPage" class="btn btn-secondary">
+                            <i class="fas fa-angle-left"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--6">
+<div class="row">
+    <div class="col">
+            <!-- Card -->
+            <div class="card">
+                <!-- Card body -->
+                <div class="card-body">
+                    <form class="needs-validation" novalidate>
+                        <!-- FantasyName -->
+                        <div class="form-group mb-3">
+                            <label for="cmscore-user-fantasyname-input" class="form-control-label">
+                                <i class="fas fa-font"></i> Fantasy Name
+                            </label>
+                            <input class="form-control" 
+                                min="1" 
+                                max="200" 
+                                type="text" 
+                                id="cmscore-user-fantasyname-input" 
+                                value="@FantasyName"
+                                />
+                            
+                        </div>
+                        <!-- Email -->
+                        <div class="form-group mb-3">
+                            <label for="cmscore-user-email-input" class="form-control-label">
+                                <i class="fas fa-at"></i> Email
+                            </label>
+                            <input class="form-control" 
+                                type="email" 
+                                min="1" 
+                                max="320" 
+                                id="cmscore-user-email-input" 
+                                value="@Email" 
+                                />
+                            
+                        </div>
+                        <!-- Password -->
+                        <div class="form-group mb-3">
+                            <label for="cmscore-user-password-input" class="form-control-label">
+                                <i class="fas fa-asterisk"></i> 
+                                Password
+                            </label>
+                            <input class="form-control" 
+                                min="1" 
+                                max="8000" 
+                                type="password" 
+                                id="cmscore-user-password-input" 
+                                value="@Password" 
+                                />
+                            
+                        </div>
+                        <!-- RoleId -->
+                            <div class="form-group mb-3">
+                                <label class="form-control-label">
+                                    <i class="fas fa-hashtag"></i> Role ID
+                                </label>
+                                <br/>
+                                <button type="button" 
+                                    class="btn btn-outline-primary border-0" 
+                                    data-toggle="modal" 
+                                    data-target="#modal-foreign-key-code-selector">
+                                        <i class="fas fa-hashtag"></i>
+                                </button>
+                                <ul id="cmscore-user-roleid-list"
+                                    class="nav nav-pills nav-fill flex-column flex-sm-row" 
+                                    role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link mb-sm-3 mb-md-0 active" 
+                                            data-toggle="tab" 
+                                            href="javascript:void(0)" 
+                                            role="tab" 
+                                            aria-controls="" 
+                                            aria-selected="true">
+                                                @RoleName
+                                        </a>
+                                        <input type="hidden" 
+                                            id="cmscore-user-roleid-input"
+                                            value="@RoleId"/>
+                                    </li>
+                                </ul>
+                                <p class="text-danger text-sm">
+                                    <b>This value is required.</b>
+                                </p>
+                            </div>
+                        <!-- RegistrationToken -->
+                        <div class="form-group mb-3">
+                            <label for="cmscore-user-registrationtoken-input" class="form-control-label">
+                                <i class="fas fa-font"></i> Registration Token
+                            </label>
+                            <input class="form-control" 
+                                min="1" 
+                                max="8000" 
+                                type="text" 
+                                id="cmscore-user-registrationtoken-input" 
+                                value="@RegistrationToken"
+                                required/>
+                            <div class="invalid-feedback">
+                                    This value is required.
+                                </div>
+                        </div>
+                        
+                        <!-- Buttons -->
+                        <div class="row justify-content-between">
+                            <button class="btn btn-primary text-nowrap ml-3 mt-4" 
+                                type="submit">
+                                    <i class="@NonQueryIcon"></i> 
+                                    @NonQueryText
+                            </button>
+                            <a href="/CMSCore/UserQueryPage" 
+                                class="btn btn-outline-primary col-auto mr-3 mt-4 text-nowrap">
+                                    <i class="fas fa-angle-left"></i> 
+                                    Go back
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Card footer -->
+            <div class="card-footer py-2">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ForeignKeyDropDown selector in Modal style -->
+<div class="row">
+    <div class="col-md-4">
+        <!-- Modal -->
+        <div class="modal fade" id="modal-foreign-key-code-selector" tabindex="-1" role="dialog" aria-labelledby="modal-foreign-key-selector" aria-hidden="true">
+            <div class="modal-dialog modal-secondary modal-dialog-centered modal-" role="document">
+                <!-- Modal content -->
+                <div class="modal-content bg-gradient-secondary">
+                    <div class="modal-header">
+                        <h6 class="modal-title text-primary">
+                            Choose a role <i class="fas fa-hashtag"></i>
+                         </h6>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <div class="input-group input-group-merge input-group-alternative">
+                                    <select id="cmscore-user-roleid-select" class="form-control" data-toggle="select" title="Simple select" data-live-search="true" data-live-search-placeholder="Choose value" data-allow-reset="true">
+                                        <option value="0"></option> <!--This must be empty-->
+                                        @{
+                                            foreach (RoleModel RoleModel in lstRoleModel)
+                                            {
+                                                <option value="@RoleModel.RoleId" >@RoleModel.Name</option>
+                                            }
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary ml-auto" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Phone code Selector in Modal style -->
+<div class="row">
+    <div class="col-md-4">
+        <div class="modal fade" id="modal-phone-code-selector" tabindex="-1" role="dialog" aria-labelledby="modal-phone-code-selector" aria-hidden="true">
+            <div class="modal-dialog modal-secondary modal-dialog-centered modal-" role="document">
+                <div class="modal-content bg-gradient-secondary">
+                    <div class="modal-header">
+                        <h6 class="modal-title text-primary">Choose your phone code <i class="fas fa-globe-americas"></i></h6>
+                    </div>
+                    <div class="modal-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <div class="input-group input-group-merge input-group-alternative">
+                                    <select class="form-control" data-toggle="select" title="Simple select" data-live-search="true" data-live-search-placeholder="Country (+Code)" data-allow-reset="true">
+                                        <option></option> <!--This must be empty-->
+                                        <option>Argentina (+54)</option>
+                                        <option>USA (+1)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary ml-auto" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/BasicCore/jquery-3.6.1.min.js"></script>
+<script src="/assets/vendor/quill/dist/quill.min.js"></script>
+<script src="/js/CMSCore/User/jQuery/UserNonQuery_jQuery.js"></script>

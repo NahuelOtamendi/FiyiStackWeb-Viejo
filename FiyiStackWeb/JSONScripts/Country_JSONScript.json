@@ -1,0 +1,12 @@
+{
+    "CountryId" : 1,
+    "Name" : "PutName",
+    "GeographicalCoordinates" : "PutGeographicalCoordinates",
+    "Code" : "PutCode",
+    "PlanetId" : 1,
+    "Active" : true,
+    "UserCreationId" : 1,
+    "UserLastModificationId" : 1,
+    "DateTimeCreation" : "1753-01-01T00:00:00.001Z",
+    "DateTimeLastModification" : "1753-01-01T00:00:00.001Z"
+}

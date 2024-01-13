@@ -1,0 +1,259 @@
+﻿@page "/FiyiStack"
+@model FiyiStackWeb.Areas.FiyiStack.Products.Pages.FiyiStackModel
+@{
+    Layout = "_Layout";
+}
+<div class="container">
+    <div class="row mt-5 pt-5">
+        <!-- Title -->
+        <div class="col-lg-8 mx-auto text-center my-5">
+            <h3 class="display-4">FiyiStack</h3>
+            <h5><span class="badge badge-lg badge-success">El generador low-code C#</span></h5>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+    <div class="col mr-auto text-left mt-4">
+        <div class="card bg-default">
+            <div class="card-body">
+                <h5 class="card-title text-white">Tabla de contenidos</h5>
+                <div class="row">
+                    <div class="col-8">
+                        <ol class="text-white">
+                            <li class="mt-2"><a class="text-white" href="#1">Formulario de login</a></li>
+                            <li class="mt-2"><a class="text-white" href="#2">Formulario de proyectos</a></li>
+                            <li class="mt-2"><a class="text-white" href="#3">Formulario del generador</a></li>
+                            <li class="mt-2"><a class="text-white" href="#4">Formulario de la configuración</a></li>
+                        </ol>
+                    </div>
+                    <div class="col-4 d-none d-lg-inline d-xl-inline">
+                        <img src="/img/FiyiStack/FiyiStackImageTransparent.png" width="130" alt="Logo" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Login form -->
+        <div id="1" class="card bg-default shadow border-0">
+            <img src="/img/FiyiStack/FiyiStackApp-LoginForm.png" class="card-img-top">
+            <blockquote class="card-blockquote">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                    <polygon points="0,52 583,95 0,95" class="fill-default"></polygon>
+                    <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default"></polygon>
+                </svg>
+                <h4 class="display-4 text-white">Formulario de login</h4>
+                <p class="lead text-italic text-white">
+                  Aquí ingresas tus credenciales para acceder a la aplicación FiyiStack
+                </p>
+            </blockquote>
+        </div>
+        <!-- Project form -->
+        <div id="2" class="card bg-default shadow border-0">
+            <img src="/img/FiyiStack/FiyiStackApp-ProjectsForm.png" class="card-img-top">
+            <blockquote class="card-blockquote">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                    <polygon points="0,52 583,95 0,95" class="fill-default"></polygon>
+                    <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default"></polygon>
+                </svg>
+                <h4 class="display-4 text-white">Formulario de proyectos</h4>
+                <p class="lead text-italic text-white">
+                  En este formulario puedes crear o editar tus proyectos
+                </p>
+                <ol class="text-white">
+                    <li class="mt-2">Aquí puedes cargar tus proyectos guardados.</li>
+                    <li class="mt-2">Aquí puedes editar tus proyectos colocando 
+                        <span class="badge badge-danger">Project name</span>,
+                        <span class="badge badge-danger">General history user</span>, usado para guardar información relacionada
+                        a los requerimientos de tus clientes, y <span class="badge badge-danger">Path</span> para elegir la ubicación de tu proyecto
+                    </li>
+                    <li class="mt-2">Este botón es usado para crear un proyecto.
+                    </li>
+                    <li class="mt-2">Estos botones son para eliminar o filtrar proyectos.</li>
+                </ol>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
+                    <span class="alert-inner--text">Recuerda que la ubicación apunte al archivo Startup.cs</span>
+                </div>
+            </blockquote>
+        </div>
+        <!-- Generator form -->
+        <div id="3" class="card bg-default shadow border-0">
+            <img src="/img/FiyiStack/FiyiStackApp-GeneratorForm.gif" class="card-img-top">
+            <blockquote class="card-blockquote">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                    <polygon points="0,52 583,95 0,95" class="fill-default"></polygon>
+                    <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default"></polygon>
+                </svg>
+                <span class="badge badge-pill badge-success">Imagen GIF arriba</span>
+                <h4 class="display-4 text-white">Formulario del generador</h4>
+                <p class="lead text-italic text-white">
+                  Aquí esta la parte principal de FiyiStack, el generador. Acá puedes elegir las bases de datos, las tablas de cada BD y las columnas de cada tabla.
+                </p>
+                <ol class="text-white">
+                    <li class="mt-2">Acá hay 3 partes, las <span class="badge badge-danger">Databases</span> (puedes crear tanto como quieras), 
+                        sus <span class="badge badge-danger">Tables</span>, y las  
+                        <span class="badge badge-danger">Columns</span> de cada tabla. Puedes navegar entre cada una de ellas
+                        para ver su contenido creado a partir de tu diagrama de base de datos. Por ejemplo, seleccionando la opción de bases de datos despliega una lista
+                        de bases de datos <span class="badge badge-danger">2</span> y su correspondiente información a la  
+                        <span class="badge badge-danger">3</span> derecha.
+                    </li>
+                    <li class="mt-2">Aquí se muestran las bases de datos. Puedes agregar cuantas tú quieras.</li>
+                    <li class="mt-2">Aquí se muestra la información de cada base de datos. El 
+                        <span class="badge badge-danger">Name</span>, la opción
+                        <span class="badge badge-danger">Microsoft SQL Server</span> (única opción por el momento), y
+                        <span class="badge badge-danger">Connection string</span>. Como puedes ver, la base de datos es local porque tiene un punto (.). 
+                        <div class="alert alert-warning alert-dismissible fade show my-3" role="alert">
+                            <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
+                            <span class="alert-inner--text">Recuerda, el nombre de la base de datos debe ser igual al colocado en Connection string (initial catalog property)</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">Estos botones son para eliminar y agregar bases de datos.</li>
+                    <li class="mt-2">Este botón es para ingresar a la configuración del generador.</li>
+                    <li class="mt-2">Este botón es para generar el código de las tablas seleccionadas
+                        <span class="badge badge-danger">7</span>.
+                    </li>
+                    <li class="mt-2">Aquí hay una lista de las tablas correspondientes a la base de datos seleccionada. 
+                        Como puedes ver, cada tabla tiene un esquema como <u>dbo</u>, un área
+                        <u>BasicCore</u> y el nombre de la tabla como <u>Failure</u>: 
+                        <u>[dbo].[BasicCore.Failure]</u>, para dar un ejemplo.
+                    </li>
+                    <li class="mt-2">Aquí se muestran los datos de la tabla seleccionada. Por ejemplo, si selecciono
+                        <u>[dbo].[BasicCore.Failure]</u>, la tabla <span class="badge badge-danger">Name</span> 
+                        será Failure, el <span class="badge badge-danger">esquema de base de datos</span> será dbo, y el
+                        <span class="badge badge-danger">Área</span> será BasicCore. También puedes
+                        agregar la <span class="badge badge-danger">Version</span> para tener diferentes versiones de la tabla, yo por ejemplo puse 1.
+                         <div class="alert alert-info alert-dismissible fade show my-3" role="alert">
+                            <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
+                            <span class="alert-inner--text">Hay muchas cantidades de esquemas, la que se recomienda es dbo (database owner)</span>
+                        </div>
+                        <div class="alert alert-info alert-dismissible fade show my-3" role="alert">
+                            <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
+                            <span class="alert-inner--text">Coloca un nombre, un área, y una versión sin espacios o carácteres especiales, solo texto y números, 
+                                y si puedes coloca la primer letra en mayúscula.
+                        Es una buena práctica</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">Estos botones son para remover tablas, seleccionar todas las tablas y para agregar nuevas tablas.
+                    </li>
+                    <li class="mt-2">Una vez seleccionada la tabla puedes ir al tab de columnas para agregar nuevas columnas a la tabla seleccionada.
+                    </li>
+                    <li class="mt-2">Aquí se muestra la configuración de cada columna. Si selecciono la columna Message, 
+                        va a mostrar Message como <span class="badge badge-danger">Name</span>, la opción 
+                        <span class="badge badge-danger">Nullable</span> indica si la columna acepta valores nulos o no,
+                        un <span class="badge badge-danger">History user</span> 
+                        indicando para que sirve la columna, y un <span class="badge badge-danger">Data type</span> 
+                        <span class="badge badge-danger">13</span>. Por ejemplo, Message tiene el data type de tipo Text: TextArea,
+                        esta opción muestra más información a la derecha, <span class="badge badge-danger">Min</span>  
+                        y <span class="badge badge-danger">Max</span> números de carácteres que la columna permite, y
+                        también un campo para expresiones regulares, <span class="badge badge-danger">Regex</span> , para filtrar que 
+                        carácteres son permitidos en la columna.
+                        <div class="alert alert-info alert-dismissible fade show my-3" role="alert">
+                            <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
+                            <span class="alert-inner--text">Aquí es lo mismo: Coloca un nombre sin espacios o caracteres especiales,
+                            solo texto y números. Y si puedes, coloca la primer letra en mayúscula.
+                            Es una buena práctica.</span>
+                        </div>
+                    </li>
+                    <li class="mt-2">Estos botones son para remover columnas, seleccionar todas las columnas, 
+                        y para agregar una nueva columna.
+                    </li>
+                    <li class="mt-2">Este listado de opciones te permite agregar columnas con diferentes tipos de datos, por ejemplo,
+                        puedes agregar:
+                        <ul>
+                            <li class="mt-2">Boolean. Para guardar valores de 0 o 1. Usado para columnas como IsActive, 
+                                IsOnline o WantDiscount.</li>
+
+                            <li class="mt-4">Date and time</li>
+                            <li class="mt-2">Time</li>
+
+                            <li class="mt-4">Decimal</li>
+                            <li class="mt-2">Integer</li>
+
+                            <li class="mt-4">Primary Key. Esta es para la llave primaria de cada tabla. Cada tabla tiene
+                                una llave primaria y no acepta 0 o valores nulos.
+                            </li>
+                            <li class="mt-2">Foreign keys con listas desplegables</li>
+                            <li class="mt-2">Foreign keys con opciones</li>
+
+                            <li class="mt-4">Text: Basic</li>
+                            <li class="mt-2">Text: Email</li>
+                            <li class="mt-2">Text: File. Las direcciones de los archivos son guardadas como texto en la base de datos.</li>
+                            <li class="mt-2">Text: Hex colour</li>
+                            <li class="mt-2">Text: Password</li>
+                            <li class="mt-2">Text: Phone number</li>
+                            <li class="mt-2">Text: Tag. Un ejemplo de tag puede ser Buenos Aires, Roma, Paris o Londres</li>
+                            <li class="mt-2">Text: Text Area</li>
+                            <li class="mt-2">Text: Text Editor</li>
+                            <li class="mt-2">Text: URL</li>
+                            
+                        </ul>
+                    </li>
+                </ol>
+            </blockquote>
+        </div>
+        <!-- Configuration form -->
+        <div id="4" class="card bg-default shadow border-0">
+            <img src="/img/FiyiStack/FiyiStackApp-ConfigurationForm.gif" class="card-img-top">
+            <blockquote class="card-blockquote">
+                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="svg-bg">
+                    <polygon points="0,52 583,95 0,95" class="fill-default"></polygon>
+                    <polygon points="0,42 583,95 683,0 0,95" opacity=".2" class="fill-default"></polygon>
+                </svg>
+                <span class="badge badge-pill badge-success">Imagen GIF arriba</span>
+                <h4 class="display-4 text-white">Formulario de configuración</h4>
+                <p class="lead text-italic text-white">
+                  Aquí puedes configurar el generador
+                </p>
+                <ol class="text-white">
+                    <li class="mt-2">Aquí hay 3 opciones para configurar el generador, la primera es
+                        la <span class="badge badge-danger">database</span>, la segunda son los
+                        <span class="badge badge-danger">paths</span> de los archivos, y la tercera es  
+                        es <span class="badge badge-danger">interface</span> con la cual generamos (deprecado).
+                    </li>
+                    <li class="mt-2">Este botón sirve para guardar la configuración seleccionada.</li>
+                    <li class="mt-2">Con este botón puedes crear los archivos y carpetas necesarias para tu proyecto:
+                        <ul>
+                            <li class="mt-2">Archivo: <u>Startup.cs</u>. Este archivo esta a cargo de levantar la aplicación,
+                                carga las configuraciones y servicios para que el proyecto funcione.</li>
+                            <li class="mt-2">Archivo: <u>package.json</u>. Este archivo trabaja en conjunto con 
+                                Node.js package manager (npm), es principalmente utilizado para instalar y configurar 
+                                módulos Node.js externos. También contiene los comandos necesarios a ejecutar
+                                mientras la aplicación web esta siendo desarrollada.</li>
+                            <li class="mt-2">Archivo: <u>tsconfig.json</u>. Este archivo indica que el proyecto web trabaja
+                                con TypeScript. Toda la información necesaria para el transpilador TypeScript 
+                                se guarda aquí.</li>
+                            <li class="mt-2">Archivo: <u>webpack.config.js</u>. Este archivo JavaScript contiene
+                                la configuración necesaria para trabajar con el empaquetador Webpack.</li>
+                            <li class="mt-2">File: <u>Webpack.config.vendor.js</u>. Este archivo de configuración JavaScript
+                                es similar al previo, pero se diferencia en que contiene los modulos necesarios de terceros
+                                como Bootstrap, jQuery, Backbone y
+                                FontAwesome</li>
+                            <li class="mt-2">Carpetas: <u>Uploads, PDFFiles, ExcelFiles y CSVFiles</u></li>
+                        </ul>
+                    </li>
+                    <li class="mt-2">Estos checkboxes pertenecen al tab Databases. Aquí puedes definir si
+                        quieres agregar <u>columnas de auditoria como Active, DateTimeCreation, DateTimeLastModification,
+                        UserCreationId y UserLastModificationId</u>. También puedes definir si quieres <u>remover
+                        tablas, columnas y procedimientos almacenados</u> durante la generación en la base de datos.</li>
+                    <li class="mt-2">Esta lista contiene los checkboxes para definir que quieres generar en 
+                        el <u>back-end</u>
+                    </li>
+                    <li class="mt-2">Esta lista contiene los checkboxes para definir que quieres generar en
+                        el <u>front-end</u>
+                    </li>
+                    <li class="mt-2">Aquí puedes definir si quieres <u>remover archivos existentes</u> durante la generación
+                        de archivos del front-end y back-end.
+                    </li>
+                    <li class="mt-2">Esta lista desplegable define las plantillas HTML y CSS. 
+                        Por el momento puedes generar en Argon, <u>Argon design (from Creative-Tim)</u> (deprecado).
+                        <div class="alert alert-info alert-dismissible fade show my-3" role="alert">
+                            <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
+                            <span class="alert-inner--text">Nuevas plantillas serán agregadas</span>
+                        </div>
+                    </li>
+                </ol>
+            </blockquote>
+        </div>
+    </div>
+  </div>
+</div>

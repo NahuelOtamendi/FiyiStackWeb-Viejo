@@ -1,0 +1,226 @@
+﻿@page "/LearnMore"
+@model FiyiStackWeb.Areas.FiyiStack.Pages.LearnMoreModel
+@{
+    Layout = "_Layout";
+}
+<div class="container">
+    <div class="row mt-5 pt-5">
+        <!-- Title -->
+        <div class="col-lg-8 mx-auto text-center my-5">
+            <h3 class="display-4">Aprenda más</h3>
+            <h5>Acerca de FiyiStack y las herramientas RAD</h5>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card bg-secondary">
+                <div class="card-body">
+                    <h5 class="card-title">Tabla de contenido</h5>
+                    <div class="row">
+                        <div class="col-8">
+                            <ol>
+                                <li class="mt-2"><a href="#1">Qué es FiyiStack?</a></li>
+                                <li class="mt-2"><a href="#2">Qué es una herramienta RAD?</a></li>
+                                <li class="mt-2"><a href="#3">Qué genera FiyiStack?</a></li>
+                                <li class="mt-2"><a href="#4">Los lenguajes con los que trabaja FiyiStack</a></li>
+                                <li class="mt-2"><a href="#5">Los frameworks con los que trabaja FiyiStack</a></li>
+                                <li class="mt-2"><a href="#6">Las librerias con las que trabaja FiyiStack</a></li>
+                            </ol>
+                        </div>
+                        <div class="col-4 d-none d-lg-inline d-xl-inline">
+                            <img src="/img/FiyiStack/FiyiStackImageTransparent.png" width="130" alt="Logo" />
+                        </div>
+                    </div>
+              </div>
+            </div>
+            <div class="card bg-secondary" id="1">
+                <div class="card-body">
+                    <h5 class="card-title">1. Qué es FiyiStack?</h5>
+                    <p>
+                        FiyiStack es un <span class="badge badge-success">generador low-code C#</span> que te permite 
+                        crear una tabla, perteneciente a una base de datos, y convertirlo en código propio de una aplicación web. 
+                        Si tú ingresas 10 columnas en una tabla, FiyiStack 
+                        los convierte en<span class="badge badge-success">~5,000 líneas de código</span>. 
+                        Gracias a esto, tú puedes escribir código más rápido y seguro. 
+                        Pero esto no es nuevo, FiyiStack pertenece al rango de aplicaciones o herramientas RAD. 
+                        Pero, ¿qué es una herramienta RAD?
+                    </p>
+              </div>
+            </div>
+            <div class="card bg-secondary" id="2">
+                <div class="card-body">
+                    <h5 class="card-title">2. ¿Qué es una herramienta RAD?</h5>
+                    <p>Una herramienta RAD es capaz de <span class="badge badge-success">acelerar tus desarrollos de software</span>. Sus cualidades son:</p> 
+                    <ul>
+                        <li class="mt-2">Rápido desarrollo y entrega con 
+                            <span class="badge badge-success">alta calidad</span> por un bajo
+                            costo de inversión.</li>
+                        <li class="mt-2">Reduce los riesgos de mal escritura por parte de los desarrolladores, partiendo el código en pequeños fragmentos
+                            para <span class="badge badge-success">proveer rápidos cambios</span> durante el desarrollo del software.</li>
+                        <li class="mt-2">Iteración y reuso de prototipos y plantillas.</li>
+                        <li class="mt-2">Promueve la co-participación de los clientes con el equipo de desarrollo.</li>
+                        <li class="mt-2">Incluye constructores de interfaces gráficas, constructores de bases de datos, tercera y cuarta generación de lenguajes,
+                            y técnicas orientadas a la creación de objetos (POO).</li>
+                        <li class="mt-2">Enfatiza en la <span class="badge badge-success">resolución de requerimientos</span>
+                            por parte de los usuarios.
+                        </li>
+                        <li class="mt-2">Desarrollo de prioridades y definición de tiempos de entrega.</li>
+                        <li class="mt-2">Produce la documentación necesaria para facilitar
+                            el desarrollo y mantenimiento.</li>
+                    </ul>
+                    <img src="/img/FiyiStack/RADTools.png" />
+                    <br />
+                    Source: <a href="https://en.wikipedia.org/wiki/Rapid_application_development" 
+                    target="_blank">
+                        Rapid application development - Wikipedia</a>
+                    <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                        <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
+                        <span class="alert-inner--text">FiyiStack presta estas facilidades</span>
+                    </div>
+              </div>
+            </div>
+            <div class="card bg-secondary" id="3">
+                <img class="card-img-top" src="/img/FiyiStack/Stack.png" alt="Stack">
+                <div class="card-body">
+                    <h5 class="card-title">3. ¿Qué genera FiyiStack?</h5>
+                    <p> 
+                        Una aplicación web esta compuesta de <span class="badge badge-success">3 capas principales</span>. Front-end, back-end y
+                        base de datos. FiyiStack genera las 3 capas:
+                    </p>
+                    <p><span class="badge badge-success">Base de datos</span></p>
+                    <ul>
+                        <li class="mt-2"><u>Tablas con columnas</u> para almacenar los datos de tu aplicación web.</li>
+                        <li class="mt-2"><u>Procedimientos almacenados</u> para comunicar las tablas con el back-end.</li>
+                    </ul>
+                    <p><span class="badge badge-success">Back-end</span></p>
+                    <ul>
+                        <li class="mt-2"><u>Modelos o entidades C#</u> las cuales son clases C#. Estas contienen las columnas de cada tabla
+                            pero en forma de propiedades C#. También contiene las funciones que se comunican con los procedimientos almacenados de cada tabla.</li>
+                        <li class="mt-2"><u>Servicios C#</u> las cuales son clases C#. Estas clases estan dedicadas a los negocios del usuario.
+                            Se accede a la base de datos a traves de las entidades C#, se envian correos, se hacen conexiones con
+                            APIs de terceros y más.</li>
+                        <li class="mt-2"><u>Protocolos C#</u>. Estas interfaces son la conexión entre
+                            las APIs de la aplicación web y los servicios C#, todo gracias a la inyección de dependencias.</li>
+                        <li class="mt-2"><u>APIs C#</u>. Estas son las encargadas de interceptar solicitudes HTTP
+                            of the users and delegating the tasks to the C# services.</li>
+                        <li class="mt-2"><u>Filtros C#</u>. Filtros en el back-end te permiten bloquear solicitudes HTTP maliciosas o erroneas.
+                            Si una solicitud HTTP pasa el filtro, ejecuta la correspondiente API o página Razor.
+                         </li>
+                    </ul>
+                    <p><span class="badge badge-success">Front-end</span></p>
+                    <ul>
+                        <li class="mt-2"><u>Modelos TypeScript</u>. Estos son modelos que contienen los nombres de las columnas 
+                            de cada tabla, pero en un formato TypeScript. Además, contiene las funciones para conectarse a las APIs del back-end.</li>
+                        <li class="mt-2"><u>Código jQuery (Manipuladors del DOM)</u>. Esta capa esta encargada de tomar las interacciones del usuario
+                            para enviar o traer información desde las APIs. También se conecta con los modelos TypeScript.</li>
+                        <li class="mt-2"><u>Páginas Razor</u>. Las páginas Razor son las encargadas de contener el HTML, CSS y el código
+                            JavaScript. Toda página Razor tiene un back-end que solo es accedido si
+                            el filtro C# es pasado.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card bg-secondary" id="4">
+                <div class="card-body">
+                    <img class="card-img-top" src="/img/FiyiStack/Languages.png" alt="Languages">
+                    <h5 class="card-title mt-3">4. Los lenguajes con los que trabaja FiyiStack</h5>
+                    <p>FiyiStack trabaja con <span class="badge badge-success">6 lenguajes</span> por el momento:</p>
+                    <ol>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>C#</li>
+                        <li>T-SQL</li>
+                    </ol>
+                     <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
+                        <span class="alert-inner--text">Nuevos lenguajes van a ser agregados con el tiempo</span>
+                    </div>
+              </div>
+            </div>
+            <div class="card bg-secondary" id="5">
+                <div class="card-body">
+                    <h5 class="card-title mt-3">5. Los frameworks con los que trabaja FiyiStack</h5>
+                    <p>FiyiStack trabaja con <span class="badge badge-success">2 frameworks</span> por el momento:</p>
+                    <ol>
+                        <li>.NET Core 3.1</li>
+                        <li>Node.js 16.15.0</li>
+                    </ol>
+                     <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
+                        <span class="alert-inner--text">Nuevos frameworks van a ser agregados con el tiempo</span>
+                    </div>
+              </div>
+            </div>
+            <div class="card bg-secondary" id="6">
+                <div class="card-body">
+                    <h5 class="card-title">6. Las librerias con las que trabaja FiyiStack</h5>
+                    <ol>
+                        <li class="mt-2">@@types/jqueryui</li>
+                        <li class="mt-2">@@types/node</li>
+                        <li class="mt-2">@@types/plotly.js</li>
+                        <li class="mt-2">bootstrap-notify</li>
+                        <li class="mt-2">jquery-ui</li>
+                        <li class="mt-2">list.js</li>
+                        <li class="mt-2">plotly.js</li>
+                        <li class="mt-2">quill</li>
+                        <li class="mt-2">@@babel/core</li>
+                        <li class="mt-2">@@babel/preset-env</li>
+                        <li class="mt-2">@@morbidick/bootstrap</li>
+                        <li class="mt-2">@@types/backbone</li>
+                        <li class="mt-2">@@types/jquery</li>
+                        <li class="mt-2">@@types/navigo</li>
+                        <li class="mt-2">aspnet-webpack</li>
+                        <li class="mt-2">awesome-typescript-loader</li>
+                        <li class="mt-2">backbone</li>
+                        <li class="mt-2">bootstrap</li>
+                        <li class="mt-2">css-loader</li>
+                        <li class="mt-2">file-loader</li>
+                        <li class="mt-2">font-awesome</li>
+                        <li class="mt-2">glob</li>
+                        <li class="mt-2">html-webpack-plugin</li>
+                        <li class="mt-2">jquery</li>
+                        <li class="mt-2">mini-css-extract-plugin</li>
+                        <li class="mt-2">navigo</li>
+                        <li class="mt-2">optimize-css-assets-webpack-plugin</li>
+                        <li class="mt-2">path</li>
+                        <li class="mt-2">popper.js</li>
+                        <li class="mt-2">raw-loader</li>
+                        <li class="mt-2">rxjs</li>
+                        <li class="mt-2">rxjs-webworker</li>
+                        <li class="mt-2">style-loader</li>
+                        <li class="mt-2">terser-webpack-plugin</li>
+                        <li class="mt-2">typescript</li>
+                        <li class="mt-2">url-loader</li>
+                        <li class="mt-2">webpack</li>
+                        <li class="mt-2">webpack-cli</li>
+                        <li class="mt-2">webpack-dev-middleware</li>
+                        <li class="mt-2">webpack-hot-middleware</li>
+                        <li class="mt-2">nucleo</li>
+                        <li class="mt-2">notify.js</li>
+                        <li class="mt-2">datatables.net</li>
+                        <li class="mt-2">select2</li>
+                        <li class="mt-2">animate.css</li>
+                        <li class="mt-2">argon.css</li>
+                        <li class="mt-2">argon-design-system.css</li>
+                        <li class="mt-2">js-cookie</li>
+                        <li class="mt-2">jquery.scrollbar</li>
+                        <li class="mt-2">jquery-scroll-lock</li>
+                        <li class="mt-2">bootstrap-datepicker</li>
+                        <li class="mt-2">bootstrap-tagsinput</li>
+                        <li class="mt-2">bootstrap-notify</li>
+                        <li class="mt-2">ClosedXML</li>
+                        <li class="mt-2">Dapper</li>
+                        <li class="mt-2">IronPdf</li>
+                        <li class="mt-2">Microsoft.Data.SqlClient</li>
+                        <li class="mt-2">Newtonsoft</li>
+                        <li class="mt-2">CsvHelper</li>
+                        <li class="mt-2">SixLabors</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "es5",
+    "lib": [ "dom", "es2017" ]
+  },
+  "include": [
+    "wwwroot/ts/**/*.ts"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/ClientApp"
+  ]
+}

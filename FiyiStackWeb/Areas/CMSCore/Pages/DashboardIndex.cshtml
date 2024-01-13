@@ -1,0 +1,142 @@
+﻿@page
+@using Microsoft.AspNetCore.Http;
+@using FiyiStackWeb.Areas.CMSCore.Models;
+@using FiyiStackWeb.Areas.BasicCore.Models;
+@using FiyiStackWeb.Areas.FiyiStack.Models;
+@model FiyiStackWeb.Areas.CMSCore.Pages.DashboardIndexModel
+@{
+    Layout = "_LayoutDashboard";
+
+    int UserId = HttpContext.Session.GetInt32("UserId") ?? 0;
+    UserModel UserModel = new UserModel().Select1ByUserIdToModel(UserId);
+    string FantasyName = UserModel.FantasyName;
+
+    string Menues = new RoleMenuModel().SelectMenuesByRoleIdToStringForDashboardIndex(UserModel.RoleId);
+}
+<div class="header bg-primary pb-6">
+    <div class="container-fluid">
+        @{
+        if (UserModel.RoleId == 1)
+            {
+        <div class="header-body">
+            <div class="row align-items-center py-4">
+            </div>
+                      <!-- Card stats -->
+          <div class="row">
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Users</h5>
+                      <span class="h2 font-weight-bold mb-0">@ViewData["NumberOfUsers"]</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                        <i class="fas fa-user"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                      <div class="col">
+                    </div>
+                    <div class="col-auto">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                      <div class="col">
+                    </div>
+                    <div class="col-auto">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                     
+                    </div>
+                    <div class="col-auto">
+                     
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+          }
+          }
+        </div>
+    </div>
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col-12 col-lg-6">
+            <div class="card bg-gradient-success">
+                <div class="card-header bg-transparent">
+                  <h1 class="mb-0 text-center">Welcome, @FantasyName!</h1>
+                </div>
+                <div class="card-body">
+                    @Html.Raw(@Menues)
+                </div>
+            </div>
+        </div>
+        @{
+            if (UserModel.RoleId == 1)
+            {
+                <div class="col-12 col-lg-6">
+                    <div class="card bg-default">
+                        <div class="card-header bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
+                                    <h5 class="h3 text-white mb-0">Visitors per month</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="visitors-per-month-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="card bg-default">
+                        <div class="card-header bg-transparent">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
+                                    <h5 class="h3 text-white mb-0">Page visits</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="page-visits-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+<script src="/js/BasicCore/jquery-3.6.1.min.js"></script>
+<script src="/js/BasicCore/chart.js"></script>
+<script src="/js/BasicCore/VisitorCounter/visitors-chart.js"></script>

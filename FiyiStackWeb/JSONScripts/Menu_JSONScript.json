@@ -1,0 +1,13 @@
+{
+    "MenuId" : 1,
+    "Name" : "PutName",
+    "MenuFatherId" : 1,
+    "Order" : 1,
+    "URLPath" : "PutURLPath",
+    "IconURLPath" : "PutIconURLPath",
+    "Active" : true,
+    "UserCreationId" : 1,
+    "UserLastModificationId" : 1,
+    "DateTimeCreation" : "1753-01-01T00:00:00.001Z",
+    "DateTimeLastModification" : "1753-01-01T00:00:00.001Z"
+}
